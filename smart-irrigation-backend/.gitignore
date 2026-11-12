@@ -1,0 +1,6 @@
+node_modules/
+.env
+mosquitto/config/passwordfile
+mosquitto/data/*
+mosquitto/log/*
+!.gitkeep

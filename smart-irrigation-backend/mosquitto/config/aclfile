@@ -1,0 +1,12 @@
+# Backend may read all device messages and publish commands.
+user backend
+topic readwrite smart-irrigation/#
+
+# Each device username must equal its device ID.
+# A device can publish only to its own telemetry/status/ack topics
+# and subscribe only to its own command topic.
+pattern write smart-irrigation/devices/%u/telemetry
+pattern write smart-irrigation/devices/%u/availability
+pattern write smart-irrigation/devices/%u/state
+pattern write smart-irrigation/devices/%u/ack
+pattern read  smart-irrigation/devices/%u/command
